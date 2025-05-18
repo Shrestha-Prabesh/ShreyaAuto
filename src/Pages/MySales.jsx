@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -39,9 +40,7 @@ function VehicleCard({
           src={
             (vehicle.images &&
               vehicle.images.length > 0 &&
-              `../../server${
-                vehicle.images[0].image || "/placeholder.svg"
-              }`) ||
+              `../../server${vehicle.images[0].image || "/placeholder.svg"}`) ||
             "/placeholder.svg"
           }
           alt={`${vehicle.make || "Unknown"} ${vehicle.model || ""}`}
@@ -234,9 +233,7 @@ function VehicleDetailsModal({
                       onClick={() => setActiveImage(index)}
                     >
                       <img
-                        src={`../../server${
-                          img.image || "/placeholder.svg"
-                        }`}
+                        src={`../../server${img.image || "/placeholder.svg"}`}
                         alt={`${vehicle.make} ${vehicle.model} thumbnail ${
                           index + 1
                         }`}

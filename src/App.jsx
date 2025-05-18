@@ -1,3 +1,4 @@
+import React from "react";
 import "./index.css";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import NavMenu from "./Components/NavMenu";

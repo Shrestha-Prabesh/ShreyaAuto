@@ -47,9 +47,8 @@ const CarCard = () => {
             <div className="p-6 flex justify-center items-center">
               <img
                 src={
-                  car.rentVehicleImages && car.rentVehicleImages[0]
-                    ? `../../server${car.rentVehicleImages[0].image}`
-                    : "/placeholder.svg"
+                  `../../server${car.rentVehicleImages[0].image}` ||
+                  "/placeholder.svg"
                 }
                 alt={car.model}
                 className="w-full h-40 object-contain"
