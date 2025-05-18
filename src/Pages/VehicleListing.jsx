@@ -21,7 +21,9 @@ export default function VehicleListing() {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
         const data = await response.json();
-        console.log(data);
+
+        console.log("Fetched vehicles:", data);
+
         if (data.success) {
           setVehicles(data.msg);
         } else {
@@ -116,9 +118,9 @@ export default function VehicleListing() {
                 <div className="relative h-48 bg-gray-100">
                   <img
                     src={
-                      (vehicle.SellVehicleImages &&
-                        vehicle.SellVehicleImages.length > 0 &&
-                        `../../server${vehicle.SellVehicleImages[0].image}`) ||
+                      (vehicle.images &&
+                        vehicle.images.length > 0 &&
+                        `../../server${vehicle.images[0].image}`) ||
                       "/placeholder.svg"
                     }
                     alt={`${vehicle.make || "Unknown"} ${vehicle.model || ""}`}

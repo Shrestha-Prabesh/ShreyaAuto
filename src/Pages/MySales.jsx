@@ -39,7 +39,9 @@ function VehicleCard({
           src={
             (vehicle.images &&
               vehicle.images.length > 0 &&
-              `../../server${vehicle.images[0].image || "/placeholder.svg"}`) ||
+              `../../server${
+                vehicle.images[0].image || "/placeholder.svg"
+              }`) ||
             "/placeholder.svg"
           }
           alt={`${vehicle.make || "Unknown"} ${vehicle.model || ""}`}
@@ -206,7 +208,7 @@ function VehicleDetailsModal({
                 <img
                   src={
                     vehicle.images && vehicle.images.length > 0
-                      ? `../../server/controllers${
+                      ? `../../server${
                           vehicle.images[activeImage]?.image ||
                           "/placeholder.svg"
                         }`
@@ -232,7 +234,7 @@ function VehicleDetailsModal({
                       onClick={() => setActiveImage(index)}
                     >
                       <img
-                        src={`../../server/controllers${
+                        src={`../../server${
                           img.image || "/placeholder.svg"
                         }`}
                         alt={`${vehicle.make} ${vehicle.model} thumbnail ${

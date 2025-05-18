@@ -73,7 +73,7 @@ function RentalVehicles() {
 
       {/* Car Cards Section */}
       <div className="w-full max-w-7xl mx-auto p-6 mt-10 space-y-6">
-        <CarCard cars={carData.otherVehicles || []} />
+        <CarCard />
       </div>
     </div>
   );
