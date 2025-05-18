@@ -36,7 +36,7 @@ router.post('/addVehicle', upload.array('images'), async (req, res) => {
         });
 
         // Define the image folder path
-        const imageFolder = path.join(__dirname, '../../uploads/sellVechile', vehicle.id.toString());
+        const imageFolder = path.join(__dirname, '../../uploads/sellVehicle', vehicle.id.toString());
 
         // Create folder if it doesn't exist
         if (!fs.existsSync(imageFolder)) {
@@ -54,7 +54,7 @@ router.post('/addVehicle', upload.array('images'), async (req, res) => {
                 fs.writeFileSync(imagePath, file.buffer);
 
                 // Store only the relative path in the DB
-                const relativePath = `/uploads/sellVechile/${vehicle.id.toString()}/${file.originalname}`;
+                const relativePath = `/uploads/sellVehicle/${vehicle.id.toString()}/${file.originalname}`;
 
                 await v_img.create({
                     vehicleId: vehicle.id,
