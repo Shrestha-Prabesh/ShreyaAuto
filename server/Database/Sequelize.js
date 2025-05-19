@@ -1,7 +1,6 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const config = require('./Config');
 const sequelize = new Sequelize(config.db_con);
-
 const model = require('./Model');
 
 const user = model.User(sequelize, DataTypes);
@@ -37,9 +36,6 @@ LostAndFoundImage.belongsTo(LostAndFound, { foreignKey: 'lostAndFoundId' });
 LostAndFound.belongsTo(user, { foreignKey: 'uid', as: 'user' });
 Vehicle.belongsTo(user, { foreignKey: 'uid', as: 'user' }); 
 VehicleWishlist.belongsTo(user, { foreignKey: "uid", as: "user" });
-
-
-
 
 RentalAllVehicles.hasMany(RentalAllVehicleImages, {
   as: 'rentVehicleImages', 
