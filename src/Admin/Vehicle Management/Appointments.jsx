@@ -254,14 +254,15 @@ export default function Appointments() {
         toast.success("Booking has been cancelled.");
       }
 
-      // Close the modal and reset confirmation dialog
-      closeDetailsModal();
       setConfirmationDialog({
         isOpen: false,
         action: null,
         bookingId: null,
         status: null,
       });
+
+      // Close the modal and reset confirmation dialog
+      closeDetailsModal();
     } catch (error) {
       console.error("Error updating booking:", error);
       toast.error(`Failed to update booking: ${error.message}`);
@@ -444,7 +445,7 @@ export default function Appointments() {
                         {booking.vehicle.images &&
                         booking.vehicle.images.length > 0 ? (
                           <img
-                            src={`../../server/controllers${booking.vehicle.images[0]}`}
+                            src={`../../server/${booking.vehicle.images[0]}`}
                             alt={`${booking.vehicle.make} ${booking.vehicle.model}`}
                             className="h-16 w-16 rounded-lg object-cover mr-4 flex-shrink-0"
                           />
@@ -662,7 +663,7 @@ export default function Appointments() {
                             <div className="relative">
                               <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                                 <img
-                                  src={`../../server/controllers${selectedBooking.vehicle.images[currentImageIndex]}`}
+                                  src={`../../server/${selectedBooking.vehicle.images[currentImageIndex]}`}
                                   alt={`${selectedBooking.vehicle.make} ${selectedBooking.vehicle.model}`}
                                   className="absolute inset-0 h-full w-full object-cover"
                                 />

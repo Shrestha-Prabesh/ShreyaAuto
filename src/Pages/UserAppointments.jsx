@@ -222,9 +222,7 @@ export default function UserAppointments() {
       }
 
       // Close the modal
-      if (showDetailsModal) {
-        closeDetailsModal();
-      }
+      closeDetailsModal();
     } catch (error) {
       console.error("Error updating appointment:", error);
       toast.error(`Failed to update appointment: ${error.message}`);
@@ -530,7 +528,7 @@ export default function UserAppointments() {
               >
                 <div className="relative">
                   <img
-                    src={`../../server/controllers${appointment.vehicle.SellVehicleImages[0].image}`}
+                    src={`../../server/${appointment.vehicle.SellVehicleImages[0].image}`}
                     alt={`${appointment.vehicle.make} ${appointment.vehicle.model}`}
                     className="w-full h-48 object-cover"
                   />
@@ -769,7 +767,7 @@ export default function UserAppointments() {
 
                     <div className="flex items-center mb-4">
                       <img
-                        src={`../../server/controllers${selectedAppointment.vehicle.SellVehicleImages[0].image}`}
+                        src={`../../server/${selectedAppointment.vehicle.SellVehicleImages[0].image}`}
                         alt={`${selectedAppointment.vehicle.make} ${selectedAppointment.vehicle.model}`}
                         className="h-24 w-24 rounded-lg object-cover mr-4"
                       />
@@ -804,7 +802,7 @@ export default function UserAppointments() {
                                   className="relative flex-shrink-0 w-32 h-24 overflow-hidden rounded-lg"
                                 >
                                   <img
-                                    src={`../../server/controllers/${image.image}`}
+                                    src={`../../server/${image.image}`}
                                     alt={`${selectedAppointment.vehicle.make} ${
                                       selectedAppointment.vehicle.model
                                     } - ${index + 1}`}
