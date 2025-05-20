@@ -17,9 +17,13 @@ const PaymentSuccess = () => {
       if (status === "Completed" && pidx) {
         try {
           // You should have a backend route that verifies the pidx with Khalti
-          const response = await axios.post("http://localhost:3000/api/verify-khalti", {
-            pidx, amount
-          });
+          const response = await axios.post(
+            "http://localhost:3000/api/verify-khalti",
+            {
+              pidx,
+              amount,
+            }
+          );
 
           console.log("Verification response:", response.data);
 
